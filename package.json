@@ -7,6 +7,8 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "build": "./node_modules/.bin/gulp prod",
+    "clean:install:legacy": "rm -rf node_modules && npm cache clean --force && npm install --legacy-peer-deps",
+    "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
     "lint": "eslint ./packages --ext .js --ext .jsx --ignore-path .gitignore",
     "pretest": "yarn lint --cache",
     "test": "jest",
@@ -71,7 +73,7 @@
     "jsdom": "11.2.0",
     "jsdom-global": "3.0.2",
     "lerna": "2.8.0",
-    "node-sass": "4.5.3",
+    "node-sass": "^4.12.0",
     "react-test-renderer": "16.0.0",
     "sass-loader": "6.0.6",
     "sinon": "3.2.1",
